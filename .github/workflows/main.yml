@@ -47,7 +47,8 @@ jobs:
           aws-region: us-east-1
 
       - name: Configurar o kubectl
-        run: aws eks update-kubeconfig --name eks-desafio
+        # run: aws eks update-kubeconfig --name eks-desafio
+        run: aws eks update-kubeconfig --name eka-desafio
 
       - name: Deploy dos manifestos no kubernetes
         uses: Azure/k8s-deploy@v5
