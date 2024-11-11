@@ -1,4 +1,12 @@
-# Fake Shop
+# FAKE SHOP
+
+Aplicação desenvolvida como base do Desafio DevOps & Cloud:
+
+- Configurar Dockerfile
+- Configurar Kubernetes
+- Configurar Cloud Provider AWS
+- Configurar Prometheus
+- Configurar Grafana
 
 ## Variável de Ambiente
 
@@ -12,9 +20,7 @@ DB_NAME => Nome do banco de dados PostgreSQL.
 
 DB_PORT => Porta de conexão com o banco de dados PostgreSQL.
 
-# Desafio DevOps & Cloud
-
-## Desafio Docker
+## Docker
 
 Link para o repositório do projeto conversão de distância:
 
