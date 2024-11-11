@@ -170,13 +170,19 @@ Criar a infraestrutura de rede => *excluir da conta no final do teste*
 - CloudFormation > Create stack > Prepare template 'choose an existing template' > Specify template 'Amazon S3 URL' > Amazon S3 URL <colar o link do arquivo yaml> > https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml > next > Stack name 'eks-desafio' > next > next > submit > CREATE_IN_PROGRESS > CREATE_COMPLETE
 
 Criar o Cluster Kubernetes => *excluir da conta no final do teste*
-- EKS (Elastic Kubernetes Services) > Create cluster in region 'N.Virginia' > Name 'eka-desafio' > Cluster IAM role 'eks-cluster' > Next > Networking VPC 'vpc...|eks-desafio-VPC' > Subnets 'selecionar as criadas' > Security groups 'Selecionar o criado' > Next > Next > Next > Create > Creating > Active
+- EKS (Elastic Kubernetes Services) > Create cluster in region 'N.Virginia' > Name 'eks-desafio' > Cluster IAM role 'eks-cluster' > Next > Networking VPC 'vpc...|eks-desafio-VPC' > Subnets 'selecionar as criadas' > Security groups 'Selecionar o criado' > Next > Next > Next > Create > Creating > Active
 
-Configurar Kubectl localhost => *permanece na máquina localhost*
+Configurar Kubectl localhost => *permanece localhost*
 - Executar AWS-CLI no terminal para configurar interação AWS via linha de comando > https://aws.amazon.com/pt/cli/ > autenticar AWS-CLI na AWS Plataform > IAM > user > Security credentials > Access key 'key and value' > no terminal: $ aws configure 'enter' inserir configurações 'enter' > aws eks update-kubeconfig --name eks-desafio 'para acessar o cluster kubernetes na AWS' > kubectl get nodes > No resources found 'conectado' > kubectl cluster-info > 'Kubernetes control plane is running at https://...' >
 
 Configurar os nodes na AWS => *excluir da conta no final do teste*
 - EKS > Clusters > eks-desafio > Compute > Node groups > Add node group > Name 'default' > Node IAM role 'eks-worker' > Next > Maximum size '4' > Next > 'deixar subnets privadas' > Next > Next > Create > Active no terminal: $ kubectl get nodes > 'mostrar dois nodes criados'
+
+Após testes para evitar custos com AWS, deletar:
+
+- Node Groups,
+- Clusters,
+- Cloud Formation > Stacks.
 
 ## CI/CD
 
